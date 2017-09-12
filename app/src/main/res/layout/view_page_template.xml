@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview_linear_layout"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:weightSum="4"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/instruct_page_title"
+            android:text="The Ball ..."
+            android:layout_weight="3"
+            android:singleLine="true"
+            android:gravity="center"
+            android:textSize="40sp"
+            android:layout_margin="5dp"
+            android:textIsSelectable="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:weightSum="8"
+        android:orientation="horizontal"
+        android:id="@+id/image_linear_layout"
+        android:gravity="center_horizontal"
+        android:visibility="visible"
+        android:layout_weight="1"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/instruct_page_imageview"
+            android:layout_weight="3"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ball_instruct" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/instructions_detail"
+        android:text="Dummy"
+        android:textColor="@android:color/white"
+        android:textStyle="bold|italic"
+        android:layout_gravity="center"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:gravity="center_horizontal"
+        android:enabled="false" />
+
+
+</LinearLayout>

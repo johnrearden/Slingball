@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Slingball</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_launch_screen">Slingball</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="music_volume_text">Music Volume</string>
+    <string name="sound_effects_volume_text">Sound Effects</string>
+    <string name="high_score_text">High Score</string>
+
+    <string name="music_volume_tag">MUSIC_VOLUME</string>
+    <string name="effects_volume_tag">EFFECTS_VOLUME</string>
+    <string name="vibration_tag">VIBRATION</string>
+    <string name="previous_level_tag">PREVIOUS_LEVEL</string>
+    <string name="times_instructions_displayed_tag">TIMES_INSTRUCTIONS_DISPLAYED</string>
+    <string name="lives_remaining_tag">LIVES_REMAINING</string>
+    <string name="resume_allowed_string">RESUME_ALLOWED</string>
+
+    <string name="level_data_level_number">LEVEL_NUMBER</string>
+    <string name="level_data_ball_energy">BALL_ENERGY</string>
+    <string name="level_data_current_reward">CURRENT_REWARD</string>
+    <string name="level_data_game_score">GAME_SCORE</string>
+    <string name="difficulty_string">DIFFICULTY</string>
+    <string name="level_data_clocktime">CLOCK_TIME</string>
+    <string name="level_data_number_targets">NUMBER_OF_TARGETS</string>
+
+    <string name="admob_app_ID">ca-app-pub-8718080924984748~4474489111</string>
+    <string name="between_level_static_interstitial_unitID">ca-app-pub-8718080924984748/5951222314</string>
+    <string name="_remove_ads_button_text">Remove Ads</string>
+    <string name="_reinstateAdsButtonText">Reinstate Ads</string>
+    <string name="_settings_title_label">Settings</string>
+
+    <string name="key_evie">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwVhlTBQuqRoMqCUe06y+u6g9wkHFhWjwh8X750z5nVvPV7DCtk58ltvU</string>
+    <string name="key_josh">+S90xmF1O1D5a3aZDqGn1lVB/76QgvQbiJLl6hoBBR</string>
+    <string name="key_eddie">+C4E2Rp63VeFhUeiDM0mS9RhGSVfFP5C2PBuQuIstTAeaqQX13X3XrHxJugm4713</string>
+    <string name="key_mathew">VMCpGmqkjEns3Fa/oyYQeTZDeAZ1yBBIoVlSEY7taGGJ1b3KcTylfWk2M</string>
+
+    <string name="play_level_again_start">Play this level again for </string>
+    <string name="play_level_again_end">\'s?</string>
+    <string name="purchase_more_lives_start">Purchase more</string>
+    <string name="purchase_more_lives_end">\'s</string>
+    <string name="back_to_main_menu">Back to Home</string>
+    <string name="_game_over_costs">Costs</string>
+    <string name="_gameover_youhave">You have</string>
+    <string name="_buy_lives_button_text">Buy More Lives</string>
+    <string name="_back_button_text">Back</string>
+    <string name="_remove_ads_description">Ads gone</string>
+    <string name="_buy_5_lives_description">Buy 5 lives</string>
+    <string name="_buy_10_lives_description">Buy 10 lives</string>
+    <string name="_buy_25_lives_description">Buy 25 lives</string>
+    <string name="_unlock_hard_description">Hard Level</string>
+    <string name="_lives_remaining_text_start">You have</string>
+    <string name="_lives_remaining_singular">life</string>
+    <string name="_lives_remaining_plural">lives</string>
+    <string name="_lives_remaining_text_end">left.</string>
+    <string name="_hard_level_available">HARD_LEVEL_AVAILABLE</string>
+
+    <string name="gameover_restart_data">GAMEOVER_RESTART_DATA</string>
+    <string name="should_restart_after_gameOver">SHOULD_RESTART_AFTER_GAMEOVER</string>
+    <string name="score_at_level_start">SCORE_AT_LEVEL_START</string>
+    <string name="current_level">CURRENT_LEVEL</string>
+    <string name="total_number_of_stars">TOTAL_NUMBER_OF_STARS</string>
+    <string name="settings_save_button_text">Save</string>
+    <string name="_no_lives_remaining_message">YOU\'RE OUT OF LIVES!</string>
+    <string name="yes_instruct_button_text">Yes</string>
+    <string name="not_now_instruct_button_text">Not Now</string>
+    <string name="never_instruct_button_text">Never</string>
+    <string name="_want_intructions_text">Would you like to see instructions?</string>
+
+    <string name="you_have_completed">You have completed the</string>
+    <string name="difficulty_level">difficulty level.</string>
+    <string name="hard_level_unlocked_message_string">HARD level unlocked!</string>
+
+</resources>

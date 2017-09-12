@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="circle_background">#363640</color>
+    <!--<color name="outer_circle">#3C3C3C</color>-->
+    <color name="outer_circle">#656565</color>
+    <color name="readout_label_text_color">#404040</color>
+    <color name="outer_circle_highlighted">#FF0000</color>
+    <color name="rewards_text_on">#FFFFFF</color>
+    <color name="rewards_text_off">#303030</color>
+    <color name="rewards_tag_background">#202020</color>
+    <color name="rewards_tag_backlight">#FFFFFF</color>
+    <color name="game_background">#000000</color>
+    <color name="target_silver">#D4AF37</color>
+    <color name="ball_trail">#c8c8dc</color>
+
+    <color name="reward_autopilot">#D4AF37</color>
+    <color name="reward_invinciball">#C0C0C0</color>
+    <color name="reward_extratime">#CD7FC0</color>
+    <color name="reward_powerup">#0bad0b</color>
+    <color name="reward_shield">#4F4FFF</color>
+    <color name="sudden_death_red">#ff0000</color>
+
+    <color name="unlit_tile">#555555</color>
+    <color name="lit_tile">#DDDDFF</color>
+
+    <color name="tadpolehalo">#46FF46</color>
+    <color name="readouthalo">#FFFFFF</color>
+
+    <color name="messagetextcolor">#AAAAAA</color>
+</resources>

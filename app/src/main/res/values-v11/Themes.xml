@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="GlobalAppStyle" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <item name="android:textViewStyle">@style/GlobalFont</item>
+    </style>
+
+    <style name="GlobalFont" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+</resources>

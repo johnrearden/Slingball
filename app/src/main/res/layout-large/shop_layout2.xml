@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShopActivity"
+   >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/active_shop_screen"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shop_banner"
+            android:onClick="onTitleClick" />
+
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/main_table"
+            android:layout_marginTop="50dp"
+            >
+
+            <TableRow
+                android:id="@+id/no_ads_tablerow"
+                android:onClick="onRemoveAdsButtonClicked">
+                <ImageButton
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerInside"
+                    android:id="@+id/no_ads_imagebutton"
+                    android:src="@drawable/no_ads_image"
+                    android:onClick="onRemoveAdsButtonClicked"
+                    android:background="@android:color/transparent"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/remove_ads_textview"
+                    android:layout_marginLeft="30dp"
+                    android:text="@string/_remove_ads_description"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/no_ad_cost_textview"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:text="€0.00"
+                    android:textSize="30sp"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/_5_lives_tablerow"
+                android:onClick="onBuy5LivesButtonClick">
+                <ImageButton
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerInside"
+                    android:id="@+id/buy_five_lives_imagebutton"
+                    android:src="@drawable/buy_5_hearts"
+                    android:onClick="onBuy5LivesButtonClick"
+                    android:background="@android:color/transparent"
+                    android:focusable="false"
+                    android:padding="5dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/add_5_lives_textview"
+                    android:text="@string/_buy_5_lives_description"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/_5_lives_cost_textview"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:text="€0.00"
+                    android:textSize="30sp"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/_10_lives_tablerow"
+                android:onClick="onBuy10LivesButtonClick">
+                <ImageButton
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerInside"
+                    android:id="@+id/buy_10_lives_imagebutton"
+                    android:src="@drawable/buy_10_hearts"
+                    android:onClick="onBuy10LivesButtonClick"
+                    android:background="@android:color/transparent"
+                    android:focusable="false"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/add_10_lives_textview"
+                    android:text="@string/_buy_10_lives_description"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/_10_lives_cost_textview"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:text="€0.00"
+                    android:textSize="30sp"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/_25_lives_tablerow"
+                android:onClick="onBuy25LivesButtonClick">
+                <ImageButton
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerInside"
+                    android:id="@+id/buy_25_lives_imagebutton"
+                    android:src="@drawable/buy_25_hearts"
+                    android:onClick="onBuy25LivesButtonClick"
+                    android:background="@android:color/transparent"
+                    android:focusable="false"
+                    android:layout_column="0"
+                    android:layout_row="3"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/add_25_lives_textview"
+                    android:layout_column="1"
+                    android:layout_row="3"
+                    android:text="@string/_buy_25_lives_description"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/_25_lives_cost_textview"
+                    android:layout_column="2"
+                    android:layout_row="3"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:text="€0.00"
+                    android:textSize="30sp"
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/unlock_hard_tablerow"
+                android:onClick="onUnlockHardButtonClick">
+                <ImageButton
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerInside"
+                    android:id="@+id/unlock_hard_imagebutton"
+                    android:src="@drawable/unlock_hard_level_image"
+                    android:onClick="onUnlockHardButtonClick"
+                    android:background="@android:color/transparent"
+                    android:focusable="false"
+                    android:layout_column="0"
+                    android:layout_row="4"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/unlock_hard_textview"
+                    android:layout_column="1"
+                    android:layout_row="4"
+                    android:text="@string/_unlock_hard_description"
+                    android:layout_gravity="center_vertical"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="30sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/unlock_hard_cost_textview"
+                    android:layout_column="2"
+                    android:layout_row="4"
+                    android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="30dp"
+                    android:text="€0.00"
+                    android:textSize="30sp"
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/lives_remaining_reporter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:textStyle="bold"
+            android:text="@string/_lives_remaining_text_start"
+            android:textSize="30dp"
+            android:padding="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dev_panel"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/temp_purge_lives_button"
+                android:onClick="onPurgeLivesButtonClicked"
+                android:text="Temp - Purge all lives"
+                android:layout_gravity="center"
+                android:padding="20dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/temp_consume_remove_ads_button"
+                android:onClick="onConsumeRemoveAds"
+                android:text="Consume REMOVE_ADS"
+                android:layout_gravity="center"
+                android:padding="20dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/clear_hardunlocked_button"
+                android:onClick="onConsumeHardUnlocked"
+                android:text="Consume HARD_UNLOCKED"
+                android:layout_gravity="center"
+                android:padding="20dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/waiting_shop_screen"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waiting for shop ...."
+            android:textSize="30dp"
+            android:singleLine="true" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_gravity="center"
+            android:padding="20dp" />
+
+    </LinearLayout>
+
+</FrameLayout>
+

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:text="Instructions"
+        android:gravity="center"
+        android:layout_marginBottom="30dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="8"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_gravity="center"
+            android:src="@drawable/ball_instruct_compress"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Controlling the ball ..."
+                android:layout_gravity="left"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textStyle="bold|italic"
+                android:layout_marginBottom="5dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hold one of the corner buttons .... release the button to let the ball fly!"
+                android:layout_gravity="center"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="8"
+        android:gravity="center"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't hit the edge!"
+                android:layout_gravity="left"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textStyle="bold|italic"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You'll lose energy ... once it's all gone, it's GAME OVER!"
+                android:layout_gravity="center"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_gravity="center"
+            android:src="@drawable/wall_collision_instruct_compress"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:padding="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="8"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_gravity="center"
+            android:src="@drawable/bonus_instruct_compress"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get power_ups!"
+                android:layout_gravity="left"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+                android:textStyle="bold|italic"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hit the grey targets to collect a power-up ... Press the power-up button to activate it!"
+                android:layout_gravity="center"
+                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textStyle="bold|italic"
+        android:text="Unlock HARD level by finishing NORMAL level."
+        android:layout_marginTop="10dp"
+        />
+
+</LinearLayout>

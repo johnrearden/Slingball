@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.intricatech.slingball">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/hi_res_icon"
+        android:label="Quick Slinger"
+        android:theme="@style/GlobalAppStyle">
+        <activity
+            android:name=".GameActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Flingballer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Slingball"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Quick Slinger"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            >
+        </activity>
+        <activity
+            android:name=".ShopActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Shop"
+            android:screenOrientation="portrait"></activity>
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".InstructionActivity"
+            android:theme="@style/InstructionsTheme"
+            >
+
+        </activity>
+    </application>
+
+</manifest>

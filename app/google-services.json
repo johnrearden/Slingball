@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "787942926182",
+    "firebase_url": "https://slingball-d8640.firebaseio.com",
+    "project_id": "slingball-d8640",
+    "storage_bucket": "slingball-d8640.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787942926182:android:4c6243007c1b0a68",
+        "android_client_info": {
+          "package_name": "com.intricatech.slingball"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787942926182-gopp7cc92se6gans73abg7hp26v9poq4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlw9td7CPS3-YzYMptT1uKTmJ7gE5crAM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
