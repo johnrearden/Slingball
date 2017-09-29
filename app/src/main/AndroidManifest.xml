@@ -8,6 +8,7 @@
 
     <application
         android:allowBackup="true"
+        android:largeHeap="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/hi_res_icon"
         android:label="Quick Slinger"
@@ -15,12 +16,12 @@
         <activity
             android:name=".GameActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:label="Flingballer"
+            android:label="Rim Slinger game"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Slingball"
             android:configChanges="orientation|keyboardHidden"
-            android:label="Quick Slinger"
+            android:label="Rim Slinger"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -166,8 +166,6 @@ public class LevelIndicator {
         glyphHeight = (float) (backgroundCircleDiameter / Math.sqrt(2)
                         * IntRepConsts.LEVEL_INDICATOR_RATIO_OF_GLYPHHEIGHT_TO_OVERALL_HEIGHT);
         glyphWidth = glyphHeight / 2;
-        /*xPos = - glyphWidth + playAreaInfo.xCenterOfCircle + radius * (float)(Math.cos(angle));
-        yPos =  - (glyphHeight / 2) + playAreaInfo.yCenterOfCircle + radius * (float)(Math.sin(angle)) - verticalOffset;*/
 
         scaledDigits = Bitmap.createScaledBitmap(digitsSource, (int) (glyphWidth), (int) (glyphHeight * 13), false);
 
@@ -178,7 +176,7 @@ public class LevelIndicator {
         backgroundCanvas.drawCircle(
                 backgroundCircleDiameter / 2,
                 backgroundCircleDiameter / 2,
-                backgroundCircleDiameter / 2,
+                backgroundCircleDiameter / 2.15f,
                 backgroundPaint);
 
         backgroundPaint.setColor(Color.BLACK);
@@ -196,21 +194,12 @@ public class LevelIndicator {
         displayedBitmap = Bitmap.createBitmap((int) backgroundCircleDiameter, (int) backgroundCircleDiameter, Bitmap.Config.ARGB_8888);
         displayedBitmapCanvas = new Canvas(displayedBitmap);
 
-        //updateLevelIndicator(currentLevel);
     }
 
     void drawBackground(Canvas canvas) {
         if (background == null) {
             throw new AssertionError("background bitmap is null");
         }
-
-        /*canvas.drawRect(
-                xBackground,
-                yBackground,
-                xBackground + background.getWidth(),
-                yBackground + background.getHeight(),
-                blackPaint
-        );*/
         canvas.drawBitmap(
                 background,
                 xBackground,

@@ -311,7 +311,7 @@ public class RewardsManager implements LevelChangeObserver{
 
         Canvas canvas;
         Paint textPaint = new Paint();
-        float textSize = tagThickness;
+        float textSize = tagThickness * 0.8f;
         textPaint.setTextSize(textSize);
         textPaint.setTextAlign(Paint.Align.CENTER);
         textPaint.setTypeface(Typeface.DEFAULT_BOLD);
@@ -324,7 +324,6 @@ public class RewardsManager implements LevelChangeObserver{
 
         Path textPath = new Path();
         float adjustedRadius = outerBacklightRadius - backlightThickness / 2;
-        float adjustedInnerRadius = outerBacklightRadius - tagThickness / 2;
         RectF completeArea = new RectF(
                 -adjustedRadius + halfWidth,
                 (height - backlightThickness / 2) - adjustedRadius * 2,
@@ -373,7 +372,7 @@ public class RewardsManager implements LevelChangeObserver{
                     (float) Math.toDegrees((halfAngle * 0.9f) * 2),
                     false,
                     highlightPaint);*/
-            highlightPaint.setMaskFilter(new BlurMaskFilter(tagThickness, BlurMaskFilter.Blur.NORMAL));
+            highlightPaint.setMaskFilter(new BlurMaskFilter(tagThickness * 0.5f, BlurMaskFilter.Blur.NORMAL));
             canvas.drawArc(
                     completeArea,
                     (float) Math.toDegrees(Math.PI / 2 - (halfAngle * 1.1f)),

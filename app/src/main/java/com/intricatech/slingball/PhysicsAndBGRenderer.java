@@ -220,7 +220,7 @@ public class PhysicsAndBGRenderer implements
         HARD_COMPLETED = "HARD_COMPLETED";
         livesRemaining = permanentPlayerData.getInt(LIVES_REMAINING_TAG,
                 IntRepConsts.DEFAULT_NUMBER_OF_LIVES);
-        adsActivated = adData.getBoolean(SHOW_ADS, false);
+        adsActivated = adData.getBoolean(SHOW_ADS, true);
 
         if (DEBUG) {
             callbackStats = new CallbackStats();
@@ -485,9 +485,11 @@ public class PhysicsAndBGRenderer implements
                         shouldDisplayAd = false;
                         checkAdsActivated();
 
-                        if (numberOfLevelsStarted % IntRepConsts.FREQUENCY_OF_ADS == 0 && adsActivated) {
+                        if (numberOfLevelsStarted % IntRepConsts.FREQUENCY_OF_ADS == 0
+                                && adsActivated && !shouldShowDiffLevCompleteAndFinish) {
                             shouldDisplayAd = true;
                         }
+
                         messageBoxManager.killAllMessages();
 
                         gameState = GameState.SHOWING_LEVEL_SUMMARY;
@@ -1231,11 +1233,12 @@ public class PhysicsAndBGRenderer implements
     }
 
     void checkAdsActivated() {
+        boolean prefExists = adData.contains(SHOW_ADS);
         int gamesPlayed = permanentPlayerData.getInt("NUMBER_GAMES_PLAYED", -1);
         if (gamesPlayed <= IntRepConsts.NUMBER_OF_GAMES_WITHOUT_ADS) {
             adsActivated = false;
         } else {
-            adsActivated = adData.getBoolean(SHOW_ADS, false);
+            adsActivated = adData.getBoolean(SHOW_ADS, true);
         }
     }
 

@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.Typeface;
+import android.util.Log;
 
 /**
  * Created by Bolgbolg on 10/06/2017.
@@ -79,6 +80,8 @@ public class HitRateDisplayer {
     }
 
     public void onSurfaceChanged(PlayAreaInfo playAreaInfo) {
+        boolean b = -0.0f < 0.0f;
+        Log.d(TAG, "-0.0f < 0.0f == " + b);
         radius = playAreaInfo.scaledDiameter / 2;
         thickness = IntRepConsts.HITRATE_BAR_THICKNESS_RELATIVE_TO_CIRCLE_DIAMETER * playAreaInfo.scaledDiameter;
         textPaint.setTextSize(thickness * 2);
@@ -118,10 +121,17 @@ public class HitRateDisplayer {
     public void updateHitRate(long timeElapsed) {
 
         float timeInSeconds = (float) timeElapsed / 1000000000;
-        currentHitrate = (float) hitCounter / timeInSeconds;
+        if (timeInSeconds > 0) {
+            currentHitrate = (float) hitCounter / timeInSeconds;
+        } else {
+            currentHitrate = 0;
+        }
         proportionOfBarLit = currentHitrate / MAXIMUM_HITRATE;
+
         if (proportionOfBarLit > 1.0f) {
             proportionOfBarLit = 1.0f;
+        } else if (proportionOfBarLit < 0.0f) {
+            proportionOfBarLit = 0.0f;
         }
     }
 
@@ -141,11 +151,15 @@ public class HitRateDisplayer {
                 false,
                 hitrateBackgroundPaint);
 
-        canvas.drawArc(arcRect,
-                (float) Math.toDegrees(startAngle),
-                (float) Math.toDegrees(totalArcSize * proportionOfBarLit) * signumSweepAngle,
-                false,
-                hitrateBarPaint);
+        float sweepAngle = (float) Math.toDegrees(totalArcSize * proportionOfBarLit) * signumSweepAngle;
+        if (proportionOfBarLit > 0.0f) {
+
+            canvas.drawArc(arcRect,
+                    (float) Math.toDegrees(startAngle),
+                    sweepAngle,
+                    false,
+                    hitrateBarPaint);
+        }
     }
 
     public void drawHitRateBackground(Canvas canvas) {

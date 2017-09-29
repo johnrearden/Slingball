@@ -272,7 +272,7 @@ public class LevelCatalogue {
                 ))
 
         ));
-        levelConfigNormal.put(8, new LevelConfig(25, 2, 3,
+        levelConfigNormal.put(8, new LevelConfig(25, 2, 2,
                 new ArrayList<>(Arrays.asList(
                         new TargetElement(TargetType.TADPOLE, 1.0f),
                         new TargetElement(TargetType.REWARDER, 0.2f)

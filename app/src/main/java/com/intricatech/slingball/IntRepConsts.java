@@ -8,7 +8,7 @@ import static java.lang.Math.PI;
 
 public class IntRepConsts {
 
-    static final boolean IS_RELEASE_VERSION = false;
+    static final boolean IS_RELEASE_VERSION = true;
 
     static final int STARTING_LEVEL = 1;
     static final int FREQUENCY_OF_ADS = 4;
@@ -35,7 +35,7 @@ public class IntRepConsts {
     static final int BACKGROUND_BLUE_FACTOR = 255;
     
     // TIMING FIELDS : (6 is standard)
-    static final int NUMBER_OF_UPDATES_PER_CYCLE = 1;
+    static final int NUMBER_OF_UPDATES_PER_CYCLE = 6;
 
     // TARGETMANAGER FIELDS
     static final int MAX_NUMBER_OF_ORBITS = 5; // Hard max is 20 due to size of blueFactor 8bit. 5 is nominal
@@ -204,10 +204,10 @@ public class IntRepConsts {
     static final int SCORE_BUBBLE_DISPLAY_FRAMES = 15;
 
     // Reward Display.
-    static final float REWARD_TAG_THICKNESS_RATIO = 0.14f; //0.11f
-    static final float REWARD_TAG_INNER_THICKNESS_RATIO = 0.5f;
-    static final float REWARD_TAG_GAP_TO_CIRCLE_RATIO = 1.15f; // was 1.05
-    static final float REWARD_TAG_ANGULAR_SIZE = 0.73f; // was .67
+    static final float REWARD_TAG_THICKNESS_RATIO = 0.14f; //0.14f
+    static final float REWARD_TAG_INNER_THICKNESS_RATIO = 0.5f; // 0.5f
+    static final float REWARD_TAG_GAP_TO_CIRCLE_RATIO = 1.20f; // was 1.15
+    static final float REWARD_TAG_ANGULAR_SIZE = 0.65f; // was .67
     static final int REWARD_EXTRA_TIME = 10;
     static final int REWARD_EXTRA_TIME_LEVEL_20 = 20;
 

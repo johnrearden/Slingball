@@ -18,7 +18,6 @@ import android.view.SurfaceView;
 
 import com.google.android.gms.ads.InterstitialAd;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -42,7 +41,7 @@ public class GameSurfaceView extends SurfaceView
     private static boolean DEBUG = false;
     private static boolean DEBUG_WIDTH_RATIO = true;
     private static boolean SHOW_STATS = false;
-    private static boolean USE_SPRITES = true;
+    private static final boolean USE_SPRITES = true;
     private boolean startNewGame;
     long timeOfLastDoFrame;
     private boolean resumeLastGame;
@@ -291,7 +290,6 @@ public class GameSurfaceView extends SurfaceView
         if (DEBUG) {
             Log.d(TAG, "surfaceChanged() invoked");
         }
-        Log.d(getClass().getSimpleName(), "surfaceChanged() invoked");
         lastFrameCompleted = true;
         screenWidth = width;
         screenHeight = height;
@@ -299,8 +297,6 @@ public class GameSurfaceView extends SurfaceView
 
         scaleFixedFields();
         physicsAndBGRenderer.setPlayAreaInfo(playAreaInfo);
-
-        long startTime = System.nanoTime();
 
         effectsFactory.onSurfaceChanged(width, height, playAreaInfo);
         ballimage = effectsFactory.getBallImage();
@@ -345,8 +341,6 @@ public class GameSurfaceView extends SurfaceView
                 false);
 
         effectsFactory.createTargetExplosions(playAreaInfo);
-        //scaleImages();
-        //drawDeepBackgroundBitmap();
         drawBackgroundOnBuffers();
         physicsAndBGRenderer.rewardsManager.onSurfaceChanged(playAreaInfo, backBuffer1);
         currentBackBuffer = backBuffer1;
@@ -364,20 +358,7 @@ public class GameSurfaceView extends SurfaceView
             spriteKitMap.put(type, spriteKitFactory.getSpriteKit(playAreaInfo, type, type.getTargetType()));
         }
 
-        long timeTaken = System.nanoTime() - startTime;
-        float t = (float) timeTaken / 1000000000;
-        Log.d("SurfaceChanged() : ", "Time taken : " +
-                new DecimalFormat("##0.00").format(t));
-
         startThreads();
-
-        /*physicsAndBGRenderer.setContinueRunningPhysicsThread(true);
-        physicsThread = new Thread(physicsAndBGRenderer);
-        physicsThread.start();
-
-        continueRenderingSurfaceView = true;
-
-        gameSurfaceViewThread.start();*/
 
         if (DEBUG) {
             Log.d(TAG, "surfaceChanged : physicsThread.start() invoked.");
@@ -477,9 +458,8 @@ public class GameSurfaceView extends SurfaceView
                 Log.d(TAG, "Time for drawing backBuffer = " + String.format("%,d", System.nanoTime() - startTime));
             }
 
-
             // Draw the targets.
-            if (DEBUG) {
+            if (true) {
                 startTime = System.nanoTime();
             }
             float incrementPerOrbit = playAreaInfo.scaledGapBetweenOrbits
@@ -502,15 +482,7 @@ public class GameSurfaceView extends SurfaceView
                     float y = playAreaInfo.outermostTargetRect.top + s.yPos;
                     alphaPaint.setAlpha(255 - (int)orbitsDrawInfo[i].opacity);
                     c.drawBitmap(s.spriteImage, x, y, alphaPaint);
-                    /*if (orbitsDrawInfo[i].type == TargetType.BLOCKER) {
 
-
-                    } else if (orbitsDrawInfo[i].type != TargetType.FLICKER) {
-                        c.drawBitmap(s.spriteImage, x, y, null);
-                    } else {
-                        alphaPaint.setAlpha(255 - (int)orbitsDrawInfo[i].opacity);
-                        c.drawBitmap(s.spriteImage, x, y, alphaPaint);
-                    }*/
 
                     // Draw the rewarder question mark if a rewarder exists.
                     if (currentType == SpriteType.REWARDER) {
@@ -520,42 +492,6 @@ public class GameSurfaceView extends SurfaceView
                                 y + playAreaInfo.scaledTargetThickness / 2 - rewarderQuestionMark.getHeight() / 2,
                                 null
                         );
-                    }
-
-                    // Draw the opaque mask if appropriate.
-                    if (currentType == SpriteType.BLOCKER && false) {
-                        float opaqueMaskOffset = playAreaInfo.drawArcOffset;
-                        targetRect.set(playAreaInfo.outermostTargetRect.left + (i * incrementPerOrbit) + opaqueMaskOffset,
-                                playAreaInfo.outermostTargetRect.top + (i * incrementPerOrbit) + opaqueMaskOffset,
-                                playAreaInfo.outermostTargetRect.right - (i * incrementPerOrbit) - opaqueMaskOffset,
-                                playAreaInfo.outermostTargetRect.bottom - (i * incrementPerOrbit) - opaqueMaskOffset);
-                        targetPaint.setARGB((int)orbitsDrawInfo[i].opacity, 0, 0, 0);
-                        targetPaint.setMaskFilter(targetBlurMaskFilter);
-                        targetPaint.setStrokeWidth(playAreaInfo.scaledTargetThickness * opaqueMaskRatio);
-                        c.drawArc(targetRect,
-                                (float) Math.toDegrees(AbstractTarget.getOpaqueMaskStartAngle(orbitsDrawInfo[i].alpha,
-                                        orbitsDrawInfo[i].size))
-                                        - cumulativeRotation,
-                                (float) Math.toDegrees(AbstractTarget.getOpaqueMaskSweepAngle(orbitsDrawInfo[i].size)),
-                                false,
-                                targetPaint);
-                    }
-                    // Draw the fade mask on the TarFlicker, if appropriate.
-                    if (orbitsDrawInfo[i].type == TargetType.FLICKER && orbitsDrawInfo[i].opacity != 0 && false) {
-                        targetRect.set(playAreaInfo.outermostTargetRect.left + (i * incrementPerOrbit) + playAreaInfo.drawArcOffset,
-                                playAreaInfo.outermostTargetRect.top + (i * incrementPerOrbit) + playAreaInfo.drawArcOffset,
-                                playAreaInfo.outermostTargetRect.right - (i * incrementPerOrbit) - playAreaInfo.drawArcOffset,
-                                playAreaInfo.outermostTargetRect.bottom - (i * incrementPerOrbit) - playAreaInfo.drawArcOffset);
-                        targetPaint.setColor(circleBackgroundColor);
-                        targetPaint.setAlpha((int) orbitsDrawInfo[i].opacity);
-                        targetPaint.setStrokeWidth(playAreaInfo.scaledTargetThickness + 4);
-                        targetPaint.setAntiAlias(false);
-                        float arc = orbitsDrawInfo[i].size.getAngularSize() * 1.1f;
-                        c.drawArc(targetRect,
-                                (float) Math.toDegrees(-Math.PI / 2 - arc / 2),
-                                (float) Math.toDegrees(arc),
-                                false,
-                                targetPaint);
                     }
                     // Draw the shield energy, if appropriate.
                     if (orbitsDrawInfo[i].spriteType == SpriteType.TADPOLE_HALOED) {
@@ -643,7 +579,9 @@ public class GameSurfaceView extends SurfaceView
             }
 
             // Temp : draw the previous ball positions. May use bezier curve if this improves UX.
-            startTime = System.nanoTime();
+            if (DEBUG) {
+                startTime = System.nanoTime();
+            }
             if (firstGrabDumpOccurred) {
                 if (physicsAndBGRenderer.swingball.shield == Swingball.Shield.ON) {
                     trailPaint.setColor(resources.getColor(R.color.reward_shield));
@@ -757,8 +695,6 @@ public class GameSurfaceView extends SurfaceView
         int bufferHeight = playAreaInfo.screenHeight;
         backBuffer1 = Bitmap.createBitmap(playAreaInfo.screenWidth, bufferHeight, Bitmap.Config.RGB_565);
         backBuffer2 = Bitmap.createBitmap(playAreaInfo.screenWidth, bufferHeight, Bitmap.Config.RGB_565);
-        int memory = backBuffer1.getHeight() * backBuffer1.getWidth() * 2;
-        Log.d(TAG, "backbuffer size == " + memory);
         backBufferCanvas1 = new Canvas(backBuffer1);
         backBufferCanvas2 = new Canvas(backBuffer2);
         bufferContainer.add(backBuffer1);
